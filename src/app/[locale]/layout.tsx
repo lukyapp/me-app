@@ -34,7 +34,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[lo
     >
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             {children}
             <Toaster richColors position="top-right" />
           </ThemeProvider>
