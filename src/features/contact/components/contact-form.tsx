@@ -8,6 +8,7 @@ import {
   ContactFormState,
   contactFormSubmitAction,
 } from '@/features/contact/actions/contact-form-submit.action';
+import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 
@@ -25,6 +26,7 @@ interface ContactFormProps {
 
 export function ContactForm({ labels }: ContactFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
+  const t = useTranslations();
   const [state, formAction, isPending] = useActionState<ContactFormState | null, FormData>(
     contactFormSubmitAction,
     null,
@@ -89,7 +91,7 @@ export function ContactForm({ labels }: ContactFormProps) {
       </div>
 
       <Button type="submit" size="lg" className="w-full" disabled={isPending}>
-        {isPending ? 'Sending...' : labels.submit}
+        {isPending ? t('contact.form.sending') : labels.submit}
       </Button>
     </form>
   );

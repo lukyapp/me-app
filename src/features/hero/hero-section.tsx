@@ -30,10 +30,14 @@ export async function HeroSection({ className }: ComponentProps<'section'>) {
           className="mb-8 flex justify-center gap-4"
           aria-label={t('hero.main-actions.nav-label')}
         >
-          <Button asChild size="lg" aria-label="View portfolio work">
+          <Button asChild size="lg" aria-label={t('hero.main-actions.view-my-work-aria-label')}>
             <AnchorButton href="#skills">{t('hero.main-actions.view-my-work-label')}</AnchorButton>
           </Button>
-          <Button size="lg" variant="outline" aria-label="Contact information">
+          <Button
+            size="lg"
+            variant="outline"
+            aria-label={t('hero.main-actions.contact-me-aria-label')}
+          >
             <AnchorButton href="#contact">{t('hero.main-actions.contact-me-label')}</AnchorButton>
           </Button>
         </nav>

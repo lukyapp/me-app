@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import { z } from 'zod';
 
 export const contactFormSchema = z.object({
@@ -15,3 +16,21 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
+
+export async function getContactFormSchema() {
+  const t = await getTranslations();
+
+  return z.object({
+    name: z
+      .string()
+      .min(1, t('contact.errors.name.required'))
+      .min(2, t('contact.errors.name.min'))
+      .max(100, t('contact.errors.name.max')),
+    email: z.email(t('contact.errors.email.invalid')).min(1, t('contact.errors.email.required')),
+    message: z
+      .string()
+      .min(1, t('contact.errors.message.required'))
+      .min(10, t('contact.errors.message.min'))
+      .max(5000, t('contact.errors.message.max')),
+  });
+}

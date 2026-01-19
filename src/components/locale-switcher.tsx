@@ -10,7 +10,7 @@ import {
 import { Link, usePathname } from '@/i18n/navigation';
 import { Locale } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const locales = [
   { value: 'en-US', label: 'English', flag: '🇺🇸' },
@@ -20,13 +20,14 @@ const locales = [
 export function LocaleSwitcher() {
   const pathname = usePathname();
   const currentLocale = useLocale();
+  const t = useTranslations();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="relative bg-transparent">
           <Globe className="h-5 w-5" />
-          <span className="sr-only">Toggle locale</span>
+          <span className="sr-only">{t('locale.toggle')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

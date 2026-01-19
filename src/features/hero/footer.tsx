@@ -48,7 +48,7 @@ export async function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-8 text-center text-sm text-slate-400">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

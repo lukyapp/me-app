@@ -1,8 +1,9 @@
 'use server';
 
 import { ContactEmail } from '@/features/contact/emails/contact-email';
-import { contactFormSchema } from '@/features/contact/schemas/contact-form.schema';
+import { getContactFormSchema } from '@/features/contact/schemas/contact-form.schema';
 import { rateLimit } from '@/lib/rate-limit';
+import { getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
 import { Resend } from 'resend';
 import z from 'zod';
@@ -35,6 +36,8 @@ export async function contactFormSubmitAction(
   _prevState: ContactFormState | null,
   formData: FormData,
 ): Promise<ContactFormState> {
+  const t = await getTranslations();
+
   if (process.env.NODE_ENV === 'production') {
     const headersList = await headers();
     const ip = headersList.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
@@ -47,7 +50,7 @@ export async function contactFormSubmitAction(
       const resetInSeconds = Math.ceil(rateLimitResult.resetIn / 1000);
       return {
         success: false,
-        message: `Too many requests. Please try again in ${resetInSeconds} seconds.`,
+        message: t('contact.error.rate-limit', { seconds: resetInSeconds }),
       };
     }
   }
@@ -58,12 +61,13 @@ export async function contactFormSubmitAction(
     message: formData.get('message'),
   };
 
-  const validatedFields = contactFormSchema.safeParse(rawFormData);
+  const schema = await getContactFormSchema();
+  const validatedFields = schema.safeParse(rawFormData);
 
   if (!validatedFields.success) {
     return {
       success: false,
-      message: 'Validation failed',
+      message: t('contact.error.validation'),
       errors: z.treeifyError(validatedFields.error).properties,
     };
   }
@@ -83,19 +87,19 @@ export async function contactFormSubmitAction(
       console.error('Resend error:', error);
       return {
         success: false,
-        message: 'Failed to send email. Please try again later.',
+        message: t('contact.error.email-failed'),
       };
     }
 
     return {
       success: true,
-      message: 'Thank you for your message! I will get back to you soon.',
+      message: t('contact.success.message'),
     };
   } catch (error) {
     console.error('Contact form error:', error);
     return {
       success: false,
-      message: 'An unexpected error occurred. Please try again later.',
+      message: t('contact.error.unexpected'),
     };
   }
 }
