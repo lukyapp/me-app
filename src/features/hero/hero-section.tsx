@@ -1,3 +1,4 @@
+import { AnchorButton } from '@/components/anchor-button';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
@@ -27,6 +28,7 @@ export async function HeroSection() {
   const t = await getTranslations();
   return (
     <section
+      id="hero"
       className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4"
       role="banner"
       aria-label={'hero.label'}
@@ -46,9 +48,9 @@ export async function HeroSection() {
           className="mb-8 flex justify-center gap-4"
           aria-label={t('hero.main-actions.nav-label')}
         >
-          <Button size="lg" aria-label="View portfolio work">
+          <AnchorButton size="lg" aria-label="View portfolio work" href="#skills">
             {t('hero.main-actions.view-my-work-label')}
-          </Button>
+          </AnchorButton>
           <Button size="lg" variant="outline" aria-label="Contact information">
             {t('hero.main-actions.contact-me-label')}
           </Button>

@@ -39,7 +39,7 @@ export async function SkillsSection() {
   const t = await getTranslations();
 
   return (
-    <section className="bg-white px-4 py-20" id="skills" aria-labelledby="skills-heading">
+    <section id="skills" className="bg-white px-4 py-20" aria-labelledby="skills-heading">
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 text-center">
           <h2 id="skills-heading" className="mb-4">
