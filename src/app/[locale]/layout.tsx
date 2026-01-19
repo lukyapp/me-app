@@ -1,8 +1,8 @@
-import {LocaleSwitcher} from "@/components/locale-switcher";
-import type {Metadata} from "next";
-import {NextIntlClientProvider} from "next-intl";
-import {getMessages} from "next-intl/server";
-import {Geist, Geist_Mono} from "next/font/google";
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
+import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -31,14 +31,16 @@ export default async function RootLayout({
         <html
             lang={locale}
             className="h-full antialiased"
-            dir={locale.startsWith('ar') ? 'rtl' : 'ltr'} // Set text direction (RTL for Arabic, LTR for others)
+            dir={locale.startsWith('ar') ? 'rtl' : 'ltr'}
+            suppressHydrationWarning
         >
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <NextIntlClientProvider locale={locale} messages={messages}>
-                    <LocaleSwitcher/>
-                    {children}
+                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                        {children}
+                    </ThemeProvider>
                 </NextIntlClientProvider>
             </body>
         </html>
