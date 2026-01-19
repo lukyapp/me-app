@@ -1,28 +1,28 @@
 import createMiddleware from 'next-intl/middleware';
-import {NextRequest} from "next/server";
-import {routing} from './i18n/routing';
+import { NextRequest } from 'next/server';
+import { routing } from './i18n/routing';
 
-const intlMiddleware = createMiddleware(routing)
+const intlMiddleware = createMiddleware(routing);
 
 export const config = {
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
+  // Match all pathnames except for
+  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
+  // - … the ones containing a dot (e.g. `favicon.ico`)
+  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
 };
 
 export default function middleware(request: NextRequest) {
-    const pathname = getPathname(request)
-    const requestHeaders = new Headers(request.headers);
+  const pathname = getPathname(request);
+  const requestHeaders = new Headers(request.headers);
 
-    requestHeaders.set('x-pathname', pathname);
+  requestHeaders.set('x-pathname', pathname);
 
-    const modifiedRequest = new NextRequest(request.url, {
-        headers: requestHeaders
-    });
-    return intlMiddleware(modifiedRequest);
+  const modifiedRequest = new NextRequest(request.url, {
+    headers: requestHeaders,
+  });
+  return intlMiddleware(modifiedRequest);
 }
 
 function getPathname(request: NextRequest) {
-    return '/' + request.nextUrl.pathname.split('/').slice(2).join('/');
+  return '/' + request.nextUrl.pathname.split('/').slice(2).join('/');
 }
