@@ -1,0 +1,70 @@
+import { cn } from '@/lib/utils';
+import { Coffee } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+
+const stats = [
+  // { icon: Coffee, impactNumber: '500+', label: 'Projects Completed' },
+  // { icon: Users, impactNumber: '50+', label: 'Happy Clients' },
+  // { icon: Award, impactNumber: '5+', label: 'Years Experience' },
+  // { icon: BookOpen, impactNumber: '∞', label: 'Learning Every Day' },
+] satisfies { icon: typeof Coffee; impactNumber: string; label: string }[];
+
+export async function AboutSection() {
+  const t = await getTranslations();
+
+  return (
+    <section id="about" className="bg-white px-4 py-20" aria-labelledby="about-heading">
+      <div className="mx-auto max-w-6xl">
+        <div
+          className={cn(
+            stats.length > 0 && 'lg:grid-cols-2',
+            'grid grid-cols-1 items-center gap-12',
+          )}
+        >
+          <article>
+            <h2 id="about-heading" className="mb-6">
+              {t('about.title')}
+            </h2>
+            <p className="mb-4 text-slate-600">
+              I'm a passionate full-stack web developer with a love for creating elegant solutions
+              to complex problems. With expertise spanning both frontend and backend technologies, I
+              bring a holistic approach to web development.
+            </p>
+            <p className="mb-4 text-slate-600">
+              My journey in web development started with a curiosity about how things work on the
+              internet. Since then, I've worked on numerous projects ranging from small business
+              websites to large-scale enterprise applications.
+            </p>
+            <p className="mb-6 text-slate-600">
+              When I'm not coding, you can find me contributing to open-source projects, writing
+              technical blog posts, or exploring new technologies to stay at the cutting edge of web
+              development.
+            </p>
+          </article>
+
+          {stats.length > 0 && (
+            <div className="grid grid-cols-2 gap-6">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={index}
+                    className="rounded-lg border border-slate-100 bg-gradient-to-br from-blue-50 to-slate-50 p-6 text-center"
+                  >
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+                      <Icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="mb-1 text-3xl font-bold text-slate-900">
+                      {stat.impactNumber}
+                    </div>
+                    <div className="text-sm text-slate-600">{stat.label}</div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}

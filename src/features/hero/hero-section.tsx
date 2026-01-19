@@ -1,31 +1,10 @@
 import { AnchorButton } from '@/components/anchor-button';
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { socialMediaLinks } from '@/features/links';
 import { getTranslations } from 'next-intl/server';
-
-const socialMediaLinks = [
-  {
-    id: 'github',
-    enable: false,
-    href: 'https://github.com',
-    icon: Github,
-  },
-  {
-    id: 'linkedin',
-    enable: false,
-    href: 'https://linkedin.com',
-    icon: Linkedin,
-  },
-  {
-    id: 'email',
-    enable: true,
-    href: 'mailto:your.email@example.com',
-    icon: Mail,
-  },
-];
 
 export async function HeroSection() {
   const t = await getTranslations();
+
   return (
     <section
       id="hero"
@@ -51,9 +30,14 @@ export async function HeroSection() {
           <AnchorButton size="lg" aria-label="View portfolio work" href="#skills">
             {t('hero.main-actions.view-my-work-label')}
           </AnchorButton>
-          <Button size="lg" variant="outline" aria-label="Contact information">
+          <AnchorButton
+            size="lg"
+            variant="outline"
+            aria-label="Contact information"
+            href="#contact"
+          >
             {t('hero.main-actions.contact-me-label')}
-          </Button>
+          </AnchorButton>
         </nav>
 
         <nav
