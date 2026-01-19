@@ -1,7 +1,7 @@
 {
   "Home": {
     "title": "Pour commencer, modifiez le fichier page.tsx.",
-    "description": "Vous cherchez un point de départ ou plus d'instructions ? Rendez-vous sur <templates>Modèles</templates> ou le centre d'<learning>Apprentissage</learning>.",
+    "description": "Vous cherchez un point de départ ou plus d'instructions ? Rendez-vous sur <templates>Modèles</templates> ou le centre d' <learning>Apprentissage</learning>.",
     "deployNow": "Déployer",
     "documentation": "Documentation",
     "nextLogoAlt": "Logo Next.js",
