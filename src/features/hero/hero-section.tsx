@@ -11,7 +11,7 @@ export async function HeroSection({ className }: ComponentProps<'section'>) {
   return (
     <section
       id="hero"
-      className={cn(className, 'flex min-h-screen items-center justify-center px-4')}
+      className={cn('flex min-h-screen items-center justify-center px-4', className)}
       role="banner"
       aria-label={'hero.label'}
     >

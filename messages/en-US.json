@@ -20,7 +20,7 @@
   "contact.subtitle": "Have a project in mind or want to collaborate? I'd love to hear from you!",
   "contact.title": "Get In Touch",
   "footer.about-section-label": "About",
-  "footer.about-section-paragraph": "Full-stack web developer passionate about creating elegant and efficient web solutions.",
+  "footer.about-section-paragraph": "Passionate full-stack web developer.",
   "footer.connect-section-label": "Connect",
   "footer.connect-section-nav-label": "Social media",
   "footer.copyright-label": "Copyright",
@@ -77,5 +77,15 @@
   "contact.error.rate-limit": "Too many requests. Please try again in {seconds} seconds.",
   "contact.error.email-failed": "Failed to send email. Please try again later.",
   "contact.error.unexpected": "An unexpected error occurred. Please try again later.",
-  "contact.error.validation": "Validation failed"
+  "contact.error.validation": "Validation failed",
+  "projects.title": "Missions",
+  "projects.subtitle": "A selection of my recent work showcasing various technologies and solutions",
+  "projects.0.title": "Auth & Identity Migration to Ory Kratos & Hydra Solutions",
+  "projects.0.description": "Progressive migration from a monolithic backend to a microservices architecture by externalizing identity and authentication (Ory Kratos/Hydra). Implementation of auth/consent/business separation, decoupling of the application core to improve modularity, security, and scalability, and development of a consent application integrated into OAuth2/OIDC flows.",
+  "projects.1.title": "AI Chatbot Frontend Migration (React → Vue 3)",
+  "projects.1.description": "Contributed to the migration of an AI chatbot frontend from React to Vue 3 in a technology harmonization context. Implemented end-to-end tests to validate functional user journeys and ensure continuity and quality of the user experience after migration.",
+  "projects.2.title": "International E-commerce Backend (Legacy & Microservices)",
+  "projects.2.description": "Contributed to the development and maintenance of a high-traffic international e-commerce backend within a critical legacy monolith, coexisting with microservices from the Decathlon ecosystem. Progressive legacy/microservices integration, operational handling of failed orders in production, continuous stability improvements, implementation of multi-country business features, developer mentoring, and refactoring of JWT validation via JWKS (OpenID Connect) with automatic key rotation management.",
+  "projects.3.title": "Fullstack Assignment – Digital Factory (B2B / B2C)",
+  "projects.3.description": "Fullstack assignment within a digital factory specialized in B2B/B2C web and mobile solutions. Design and development of applications in collaboration with product and design teams, frontend redesign of a self-service kiosk sales funnel with a strong UX focus, backend development in Java 17 / Spring Boot, and automation of Dockerization to simplify deployments and improve maintainability."
 }

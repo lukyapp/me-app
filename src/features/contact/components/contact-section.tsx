@@ -39,7 +39,7 @@ export async function ContactSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="contact" className={cn(className, 'px-4 py-20')} aria-labelledby="contact-heading">
+    <section id="contact" className={cn('px-4 py-20', className)} aria-labelledby="contact-heading">
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 text-center">
           <h2 id="contact-heading" className="mb-4">

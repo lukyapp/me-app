@@ -41,7 +41,7 @@ export async function SkillsSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="skills" className={cn(className, 'px-4 py-20')} aria-labelledby="skills-title">
+    <section id="skills" className={cn('px-4 py-20', className)} aria-labelledby="skills-title">
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 text-center">
           <h2 id="skills-title" className="mb-4">

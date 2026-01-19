@@ -8,7 +8,7 @@ export async function Header({ className }: ComponentProps<'header'>) {
   const t = await getTranslations();
 
   return (
-    <header className={cn(className, 'border-border border-b')}>
+    <header className={cn('border-border border-b', className)}>
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <h1 className="text-foreground text-xl font-semibold">{t('app.title')}</h1>
         <div className="flex items-center gap-2">

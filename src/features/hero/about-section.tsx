@@ -14,7 +14,7 @@ export async function AboutSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="about" className={cn(className, 'px-4 py-20')} aria-labelledby="about-heading">
+    <section id="about" className={cn('px-4 py-20', className)} aria-labelledby="about-heading">
       <div className="mx-auto max-w-6xl">
         <div
           className={cn(
@@ -27,19 +27,59 @@ export async function AboutSection({ className }: ComponentProps<'section'>) {
               {t('about.title')}
             </h2>
             <p className="mb-4 text-slate-600">
-              I'm a passionate full-stack web developer with a love for creating elegant solutions
-              to complex problems. With expertise spanning both frontend and backend technologies, I
-              bring a holistic approach to web development.
+              Je suis <strong>développeur Fullstack</strong>, passionné par le développement web et
+              la création d’applications modernes.
             </p>
+
             <p className="mb-4 text-slate-600">
-              My journey in web development started with a curiosity about how things work on the
-              internet. Since then, I've worked on numerous projects ranging from small business
-              websites to large-scale enterprise applications.
+              Je conçois des <strong>sites web et applications </strong> dont le but premier est de
+              répondre à vos besoin, tout en mettant l’accent sur la clarté, la performance et la
+              bonne compréhension des besoins client.
             </p>
-            <p className="mb-6 text-slate-600">
-              When I'm not coding, you can find me contributing to open-source projects, writing
-              technical blog posts, or exploring new technologies to stay at the cutting edge of web
-              development.
+
+            <h3 className="mb-2">Ce que je peux vous apporter</h3>
+            <ul className="mb-4 text-slate-600">
+              <li>
+                {' '}
+                - Développement <strong>front-end</strong> (interfaces propres, responsive et
+                modernes)
+              </li>
+              <li>
+                {' '}
+                - Développement <strong>back-end</strong> (logique applicative, API, bases de
+                données)
+              </li>
+              <li>
+                {' '}
+                - Création de <strong>sites vitrines</strong>, <strong>applications web</strong> et
+                outils sur mesure
+              </li>
+              <li> - Intégration, corrections de bugs et améliorations de projets existants</li>
+            </ul>
+
+            <h3 className="mb-2">Ma manière de travailler</h3>
+            <p className="mb-4 text-slate-600">
+              En tant que jeune développeur, je mise sur une <strong>communication claire</strong>,
+              une <strong>grande rigueur</strong>, et une forte envie de{' '}
+              <strong>bien faire et d’apprendre</strong>.
+            </p>
+
+            <p className="mb-4 text-slate-600">
+              Je prends le temps de bien comprendre votre projet afin de proposer des solutions
+              adaptées, propres et maintenables, tout en respectant les délais convenus.
+            </p>
+
+            <h3 className="mb-2">Pourquoi me faire confiance ?</h3>
+            <ul className="mb-4 text-slate-600">
+              <li> - Sérieux et impliqué</li>
+              <li> - Approche honnête et transparente</li>
+              <li> - Tarifs adaptés</li>
+              <li> - Suivi et accompagnement</li>
+            </ul>
+
+            <p className="mb-4 text-slate-600">
+              Si vous cherchez un développeur <strong>motivé, disponible et impliqué</strong> dans
+              votre projet, je serais ravi d’échanger avec vous.
             </p>
           </article>
 
