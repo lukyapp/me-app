@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Toaster } from 'sonner';
 import '../globals.css';
 
 const geistSans = Geist({
@@ -35,6 +36,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[lo
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
+            <Toaster richColors position="top-right" />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

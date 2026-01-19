@@ -48,4 +48,4 @@ export const socialMediaLinks = [
     href: 'mailto:llucas.proo@gmail.com',
     icon: Mail,
   },
-];
+] satisfies { id: string; enable: boolean; href: string; icon: typeof Mail }[];

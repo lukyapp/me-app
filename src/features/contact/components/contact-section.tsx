@@ -1,19 +1,17 @@
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { contactFormSubmitAction } from '@/features/contact/actions/contact-form-submit.action';
+import { ContactForm } from '@/features/contact/components/contact-form';
 import { socialMediaLinks } from '@/features/links';
 import { cn } from '@/lib/utils';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { ComponentProps } from 'react';
 
+const email = socialMediaLinks.find((s) => s.id === 'email')!;
+
 const informationCards = [
   {
-    ...socialMediaLinks.find((s) => s.id === 'email')!,
-    value: socialMediaLinks.find((s) => s.id === 'email')!.href.replace('mailto:', ''),
+    ...email,
+    value: email.href.replace('mailto:', ''),
   },
   {
     enable: false,
@@ -27,8 +25,9 @@ const informationCards = [
     id: 'location',
     icon: MapPin,
     value: 'Your City, Your Country',
+    href: undefined,
   },
-] satisfies {
+] as const satisfies {
   enable: boolean;
   id: string;
   icon: typeof Mail;
@@ -53,46 +52,17 @@ export async function ContactSection({ className }: ComponentProps<'section'>) {
           <div className="lg:col-span-2">
             <Card>
               <CardContent className="p-8">
-                <form action={contactFormSubmitAction} className="space-y-6">
-                  <div>
-                    <Label htmlFor="name">{t('contact.name-input-label')}</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder={t('contact.name-input-placeholder')}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">{t('contact.email-input-label')}</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder={t('contact.email-input-placeholder')}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">{t('contact.message-input-label')}</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder={t('contact.message-input-placeholder')}
-                      required
-                      className="mt-2 min-h-[150px]"
-                    />
-                  </div>
-
-                  <Button type="submit" size="lg" className="w-full">
-                    {t('contact.form-submit-button-label')}
-                  </Button>
-                </form>
+                <ContactForm
+                  labels={{
+                    name: t('contact.name-input-label'),
+                    namePlaceholder: t('contact.name-input-placeholder'),
+                    email: t('contact.email-input-label'),
+                    emailPlaceholder: t('contact.email-input-placeholder'),
+                    message: t('contact.message-input-label'),
+                    messagePlaceholder: t('contact.message-input-placeholder'),
+                    submit: t('contact.form-submit-button-label'),
+                  }}
+                />
               </CardContent>
             </Card>
           </div>
