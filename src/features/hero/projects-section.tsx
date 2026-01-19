@@ -10,7 +10,14 @@ const projects = [
     title: 'projects.0.title',
     description: 'projects.0.description',
     image: '/projects0.png',
-    tags: ['Ory Kratos', 'Ory Hydra', 'OAuth2', 'OIDC', 'Microservices', 'Migration progressive'],
+    tags: [
+      'Ory Kratos',
+      'Ory Hydra',
+      'OAuth2',
+      'OIDC',
+      'Microservices',
+      'projects.0.tags.progressive_migration',
+    ],
   },
   {
     title: 'projects.1.title',
@@ -88,7 +95,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge key={tagIndex} variant="secondary" className="text-xs">
-                      {tag}
+                      {tag.startsWith('projects.') ? t(tag) : tag}
                     </Badge>
                   ))}
                 </div>

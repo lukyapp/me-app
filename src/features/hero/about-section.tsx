@@ -27,59 +27,63 @@ export async function AboutSection({ className }: ComponentProps<'section'>) {
               {t('about.title')}
             </h2>
             <p className="mb-4 text-slate-600">
-              Je suis <strong>développeur Fullstack</strong>, passionné par le développement web et
-              la création d’applications modernes.
+              {t.rich('about.intro.fullstack', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </p>
 
             <p className="mb-4 text-slate-600">
-              Je conçois des <strong>sites web et applications </strong> dont le but premier est de
-              répondre à vos besoin, tout en mettant l’accent sur la clarté, la performance et la
-              bonne compréhension des besoins client.
+              {t.rich('about.intro.approach', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </p>
 
-            <h3 className="mb-2">Ce que je peux vous apporter</h3>
+            <h3 className="mb-2">{t('about.what_i_bring.title')}</h3>
             <ul className="mb-4 text-slate-600">
               <li>
                 {' '}
-                - Développement <strong>front-end</strong> (interfaces propres, responsive et
-                modernes)
+                -{' '}
+                {t.rich('about.what_i_bring.frontend', {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
               </li>
               <li>
                 {' '}
-                - Développement <strong>back-end</strong> (logique applicative, API, bases de
-                données)
+                -{' '}
+                {t.rich('about.what_i_bring.backend', {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
               </li>
               <li>
                 {' '}
-                - Création de <strong>sites vitrines</strong>, <strong>applications web</strong> et
-                outils sur mesure
+                -{' '}
+                {t.rich('about.what_i_bring.solutions', {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
               </li>
-              <li> - Intégration, corrections de bugs et améliorations de projets existants</li>
+              <li> - {t('about.what_i_bring.improvements')}</li>
             </ul>
 
-            <h3 className="mb-2">Ma manière de travailler</h3>
+            <h3 className="mb-2">{t('about.work_style.title')}</h3>
             <p className="mb-4 text-slate-600">
-              En tant que jeune développeur, je mise sur une <strong>communication claire</strong>,
-              une <strong>grande rigueur</strong>, et une forte envie de{' '}
-              <strong>bien faire et d’apprendre</strong>.
+              {t.rich('about.work_style.description', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </p>
 
-            <p className="mb-4 text-slate-600">
-              Je prends le temps de bien comprendre votre projet afin de proposer des solutions
-              adaptées, propres et maintenables, tout en respectant les délais convenus.
-            </p>
+            <p className="mb-4 text-slate-600">{t('about.work_style.process')}</p>
 
-            <h3 className="mb-2">Pourquoi me faire confiance ?</h3>
+            <h3 className="mb-2">{t('about.why_trust_me.title')}</h3>
             <ul className="mb-4 text-slate-600">
-              <li> - Sérieux et impliqué</li>
-              <li> - Approche honnête et transparente</li>
-              <li> - Tarifs adaptés</li>
-              <li> - Suivi et accompagnement</li>
+              <li> - {t('about.why_trust_me.serious')}</li>
+              <li> - {t('about.why_trust_me.honest')}</li>
+              <li> - {t('about.why_trust_me.support')}</li>
             </ul>
 
             <p className="mb-4 text-slate-600">
-              Si vous cherchez un développeur <strong>motivé, disponible et impliqué</strong> dans
-              votre projet, je serais ravi d’échanger avec vous.
+              {t.rich('about.outro', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </p>
           </article>
 

@@ -87,5 +87,21 @@
   "projects.2.title": "International E-commerce Backend (Legacy & Microservices)",
   "projects.2.description": "Contributed to the development and maintenance of a high-traffic international e-commerce backend within a critical legacy monolith, coexisting with microservices from the Decathlon ecosystem. Progressive legacy/microservices integration, operational handling of failed orders in production, continuous stability improvements, implementation of multi-country business features, developer mentoring, and refactoring of JWT validation via JWKS (OpenID Connect) with automatic key rotation management.",
   "projects.3.title": "Fullstack Assignment – Digital Factory (B2B / B2C)",
-  "projects.3.description": "Fullstack assignment within a digital factory specialized in B2B/B2C web and mobile solutions. Design and development of applications in collaboration with product and design teams, frontend redesign of a self-service kiosk sales funnel with a strong UX focus, backend development in Java 17 / Spring Boot, and automation of Dockerization to simplify deployments and improve maintainability."
+  "projects.3.description": "Fullstack assignment within a digital factory specialized in B2B/B2C web and mobile solutions. Design and development of applications in collaboration with product and design teams, frontend redesign of a self-service kiosk sales funnel with a strong UX focus, backend development in Java 17 / Spring Boot, and automation of Dockerization to simplify deployments and improve maintainability.",
+  "projects.0.tags.progressive_migration": "Progressive Migration",
+  "about.intro.fullstack": "I am a <strong>Fullstack Developer</strong>, passionate about web development and creating modern applications.",
+  "about.intro.approach": "I design <strong>websites and applications</strong> whose primary purpose is to meet your needs, while emphasizing clarity, performance, and good understanding of client requirements.",
+  "about.what_i_bring.title": "What I can bring you",
+  "about.what_i_bring.frontend": "<strong>Front-end</strong> development (clean, responsive and modern interfaces)",
+  "about.what_i_bring.backend": "<strong>Back-end</strong> development (application logic, APIs, databases)",
+  "about.what_i_bring.solutions": "Creation of <strong>showcase websites</strong>, <strong>web applications</strong> and custom tools",
+  "about.what_i_bring.improvements": "Integration, bug fixes and improvements to existing projects",
+  "about.work_style.title": "My way of working",
+  "about.work_style.description": "As a young developer, I rely on <strong>clear communication</strong>, <strong>great rigor</strong>, and a strong desire to <strong>do well and learn</strong>.",
+  "about.work_style.process": "I take the time to fully understand your project to propose adapted, clean and maintainable solutions, while respecting agreed deadlines.",
+  "about.why_trust_me.title": "Why trust me?",
+  "about.why_trust_me.serious": "Serious and committed",
+  "about.why_trust_me.honest": "Honest and transparent approach",
+  "about.why_trust_me.support": "Follow-up and support",
+  "about.outro": "If you are looking for a <strong>motivated, available and committed</strong> developer for your project, I would be delighted to discuss with you."
 }
