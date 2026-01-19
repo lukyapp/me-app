@@ -5,8 +5,10 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { contactFormSubmitAction } from '@/features/contact/actions/contact-form-submit.action';
 import { socialMediaLinks } from '@/features/links';
+import { cn } from '@/lib/utils';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { ComponentProps } from 'react';
 
 const informationCards = [
   {
@@ -34,11 +36,11 @@ const informationCards = [
   href?: string;
 }[];
 
-export async function ContactSection() {
+export async function ContactSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="contact" className="bg-slate-50 px-4 py-20" aria-labelledby="contact-heading">
+    <section id="contact" className={cn(className, 'px-4 py-20')} aria-labelledby="contact-heading">
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 text-center">
           <h2 id="contact-heading" className="mb-4">

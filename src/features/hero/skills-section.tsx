@@ -1,6 +1,8 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 import { Code2, Database, Layout, Server, Smartphone, Zap } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { ComponentProps } from 'react';
 
 const skills = [
   {
@@ -35,14 +37,14 @@ const skills = [
   },
 ];
 
-export async function SkillsSection() {
+export async function SkillsSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="skills" className="bg-white px-4 py-20" aria-labelledby="skills-heading">
+    <section id="skills" className={cn(className, 'px-4 py-20')} aria-labelledby="skills-title">
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 text-center">
-          <h2 id="skills-heading" className="mb-4">
+          <h2 id="skills-title" className="mb-4">
             {t('skills.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-slate-600">{t('skills.subtitle')}</p>

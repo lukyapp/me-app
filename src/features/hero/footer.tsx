@@ -1,3 +1,4 @@
+import { AnchorButton } from '@/components/anchor-button';
 import { sections, socialMediaLinks } from '@/features/links';
 import { getTranslations } from 'next-intl/server';
 
@@ -18,12 +19,7 @@ export async function Footer() {
             <ul className="space-y-2 text-sm">
               {sections.map((section) => (
                 <li key={section.href}>
-                  <a
-                    href={section.href}
-                    className="text-slate-400 transition-colors hover:text-white"
-                  >
-                    {t(section.label)}
-                  </a>
+                  <AnchorButton href={section.href}>{t(section.label)}</AnchorButton>
                 </li>
               ))}
             </ul>

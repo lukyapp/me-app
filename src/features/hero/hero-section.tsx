@@ -1,14 +1,17 @@
 import { AnchorButton } from '@/components/anchor-button';
+import { Button } from '@/components/ui/button';
 import { socialMediaLinks } from '@/features/links';
+import { cn } from '@/lib/utils';
 import { getTranslations } from 'next-intl/server';
+import { ComponentProps } from 'react';
 
-export async function HeroSection() {
+export async function HeroSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
     <section
       id="hero"
-      className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4"
+      className={cn(className, 'flex min-h-screen items-center justify-center px-4')}
       role="banner"
       aria-label={'hero.label'}
     >
@@ -27,17 +30,12 @@ export async function HeroSection() {
           className="mb-8 flex justify-center gap-4"
           aria-label={t('hero.main-actions.nav-label')}
         >
-          <AnchorButton size="lg" aria-label="View portfolio work" href="#skills">
-            {t('hero.main-actions.view-my-work-label')}
-          </AnchorButton>
-          <AnchorButton
-            size="lg"
-            variant="outline"
-            aria-label="Contact information"
-            href="#contact"
-          >
-            {t('hero.main-actions.contact-me-label')}
-          </AnchorButton>
+          <Button asChild size="lg" aria-label="View portfolio work">
+            <AnchorButton href="#skills">{t('hero.main-actions.view-my-work-label')}</AnchorButton>
+          </Button>
+          <Button size="lg" variant="outline" aria-label="Contact information">
+            <AnchorButton href="#contact">{t('hero.main-actions.contact-me-label')}</AnchorButton>
+          </Button>
         </nav>
 
         <nav

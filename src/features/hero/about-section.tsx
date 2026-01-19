@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { Coffee } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { ComponentProps } from 'react';
 
 const stats = [
   // { icon: Coffee, impactNumber: '500+', label: 'Projects Completed' },
@@ -9,11 +10,11 @@ const stats = [
   // { icon: BookOpen, impactNumber: '∞', label: 'Learning Every Day' },
 ] satisfies { icon: typeof Coffee; impactNumber: string; label: string }[];
 
-export async function AboutSection() {
+export async function AboutSection({ className }: ComponentProps<'section'>) {
   const t = await getTranslations();
 
   return (
-    <section id="about" className="bg-white px-4 py-20" aria-labelledby="about-heading">
+    <section id="about" className={cn(className, 'px-4 py-20')} aria-labelledby="about-heading">
       <div className="mx-auto max-w-6xl">
         <div
           className={cn(

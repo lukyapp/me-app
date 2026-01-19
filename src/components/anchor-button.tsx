@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/navigation';
 import { handleSmoothScroll } from '@/lib/smooth-scroll';
 import { ComponentProps } from 'react';
 
@@ -9,20 +9,20 @@ export function AnchorButton({
   children,
   onClick,
   ...props
-}: Omit<ComponentProps<typeof Button>, 'asChild'> & {
+}: Omit<ComponentProps<'a'>, 'href'> & {
   href: `#${string}`;
 }) {
   return (
-    <Button
+    <Link
       {...props}
+      href={href}
       onClick={(e) => {
         e.preventDefault();
         handleSmoothScroll(e as unknown as React.MouseEvent<HTMLAnchorElement>);
         onClick?.(e);
       }}
-      asChild
     >
-      <a href={href}>{children}</a>
-    </Button>
+      {children}
+    </Link>
   );
 }

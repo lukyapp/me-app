@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header className="absolute top-0 right-0 left-0" />
-      <HeroSection />
-      <SkillsSection />
-      <AboutSection />
-      <ContactSection />
+      <HeroSection className="bg-gradient-to-br from-slate-50 to-slate-100" />
+      <SkillsSection className="bg-white" />
+      <AboutSection className="bg-slate-50" />
+      <ContactSection className="bg-white" />
       <Footer />
     </main>
   );
