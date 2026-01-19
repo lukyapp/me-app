@@ -2,6 +2,8 @@
 
 import { ContactEmail } from '@/features/contact/emails/contact-email';
 import { contactFormSchema } from '@/features/contact/schemas/contact-form.schema';
+import { rateLimit } from '@/lib/rate-limit';
+import { headers } from 'next/headers';
 import { Resend } from 'resend';
 import z from 'zod';
 
@@ -33,6 +35,23 @@ export async function contactFormSubmitAction(
   _prevState: ContactFormState | null,
   formData: FormData,
 ): Promise<ContactFormState> {
+  if (process.env.NODE_ENV === 'production') {
+    const headersList = await headers();
+    const ip = headersList.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
+    const rateLimitResult = rateLimit(`contact-form:${ip}`, {
+      maxRequests: 3,
+      windowMs: 60 * 1000, // 3 requests per minute
+    });
+
+    if (!rateLimitResult.success) {
+      const resetInSeconds = Math.ceil(rateLimitResult.resetIn / 1000);
+      return {
+        success: false,
+        message: `Too many requests. Please try again in ${resetInSeconds} seconds.`,
+      };
+    }
+  }
+
   const rawFormData = {
     name: formData.get('name'),
     email: formData.get('email'),
