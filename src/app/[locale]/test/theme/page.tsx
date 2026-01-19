@@ -1,21 +1,13 @@
-"use client"
-
-import {ThemeSwitcher} from "@/components/theme-switcher";
+import {Header} from "@/components/header";
+import {ThemeLine} from "@/components/theme-line";
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import {Monitor, Moon, Sun} from "lucide-react"
-import {useTheme} from "next-themes"
-import {useEffect, useState} from "react";
 
 export default function Home() {
     return (
         <main className="min-h-screen bg-background">
-            <header className="border-b border-border">
-                <div className="container mx-auto flex items-center justify-between px-4 py-4">
-                    <h1 className="text-xl font-semibold text-foreground">Theme Switcher</h1>
-                    <ThemeSwitcher/>
-                </div>
-            </header>
+            <Header/>
 
             <div className="container mx-auto px-4 py-12">
                 <div className="mx-auto max-w-2xl space-y-8">
@@ -88,26 +80,5 @@ export default function Home() {
                 </div>
             </div>
         </main>
-    )
-}
-
-export function ThemeLine() {
-    const { theme } = useTheme()
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => setMounted(true), [])
-
-    if (!mounted) {
-        return (
-            <p className="text-center text-sm text-muted-foreground">
-                Current theme: <span className="font-medium text-foreground">…</span>
-            </p>
-        )
-    }
-
-    return (
-        <p className="text-center text-sm text-muted-foreground">
-            Current theme: <span className="font-medium text-foreground">{theme}</span>
-        </p>
     )
 }
