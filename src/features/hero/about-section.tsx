@@ -96,8 +96,8 @@ export async function AboutSection({ className }: ComponentProps<'section'>) {
                     key={index}
                     className="rounded-lg border border-slate-100 bg-gradient-to-br from-blue-50 to-slate-50 p-6 text-center"
                   >
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
-                      <Icon className="h-6 w-6 text-primary-foreground" />
+                    <div className="bg-primary mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+                      <Icon className="text-primary-foreground h-6 w-6" />
                     </div>
                     <div className="mb-1 text-3xl font-bold text-slate-900">
                       {stat.impactNumber}

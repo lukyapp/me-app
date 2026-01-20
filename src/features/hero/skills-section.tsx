@@ -47,22 +47,19 @@ export async function SkillsSection({ className }: ComponentProps<'section'>) {
           <h2 id="skills-title" className="mb-4">
             {t('skills.title')}
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">{t('skills.subtitle')}</p>
+          <p className="text-muted-foreground mx-auto max-w-2xl">{t('skills.subtitle')}</p>
         </header>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skills.map(({ title, description, icon: Icon }, index) => {
             return (
-              <Card
-                key={index}
-                className="border-border transition-colors hover:border-primary"
-              >
+              <Card key={index} className="border-border hover:border-primary transition-colors">
                 <CardContent className="p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-tertiary-light">
-                    <Icon className="h-6 w-6 text-tertiary" />
+                  <div className="bg-tertiary-light mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+                    <Icon className="text-tertiary h-6 w-6" />
                   </div>
                   <h3 className="mb-2">{t(title)}</h3>
-                  <p className="text-sm text-muted-foreground">{t(description)}</p>
+                  <p className="text-muted-foreground text-sm">{t(description)}</p>
                 </CardContent>
               </Card>
             );

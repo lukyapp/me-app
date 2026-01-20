@@ -22,8 +22,8 @@ export async function HeroSection({ className }: ComponentProps<'section'>) {
               name: (chunk) => <span className="text-blue-600">{chunk}</span>,
             })}
           </h1>
-          <h2 className="mb-6 text-muted-foreground">{t('hero.subtitle')}</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">{t('hero.paragraph')}</p>
+          <h2 className="text-muted-foreground mb-6">{t('hero.subtitle')}</h2>
+          <p className="text-muted-foreground mx-auto max-w-2xl">{t('hero.paragraph')}</p>
         </header>
 
         <nav
@@ -54,7 +54,7 @@ export async function HeroSection({ className }: ComponentProps<'section'>) {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-primary"
+                className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label={t(`hero.social-media-links.${id}-label`)}
               >
                 <Icon className="h-6 w-6" />

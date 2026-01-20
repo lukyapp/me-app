@@ -73,16 +73,16 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
           <h2 id="projects-heading" className="mb-4">
             {t('projects.title')}
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">{t('projects.subtitle')}</p>
+          <p className="text-muted-foreground mx-auto max-w-2xl">{t('projects.subtitle')}</p>
         </header>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden border-border transition-shadow hover:shadow-lg"
+              className="border-border overflow-hidden transition-shadow hover:shadow-lg"
             >
-              <div className="relative h-48 overflow-hidden bg-muted">
+              <div className="bg-muted relative h-48 overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -91,7 +91,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
               </div>
               <CardContent className="p-6">
                 <h3 className="mb-2">{t(project.title)}</h3>
-                <p className="mb-4 text-sm text-muted-foreground">{t(project.description)}</p>
+                <p className="text-muted-foreground mb-4 text-sm">{t(project.description)}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge key={tagIndex} variant="secondary" className="text-xs">
