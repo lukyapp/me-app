@@ -74,8 +74,8 @@ export async function ContactSection({ className }: ComponentProps<'section'>) {
                 <Card key={id}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100">
-                        <Icon className="h-5 w-5 text-blue-600" />
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-tertiary-light">
+                        <Icon className="h-5 w-5 text-tertiary" />
                       </div>
                       <div>
                         <div className="mb-1 font-medium">{t(`contact.${id}-card-label`)}</div>

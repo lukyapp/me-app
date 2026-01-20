@@ -13,7 +13,7 @@ export async function Header({ className }: ComponentProps<'header'>) {
         <h1 className="text-foreground text-xl font-semibold">{t('app.title')}</h1>
         <div className="flex items-center gap-2">
           <LocaleSwitcher />
-          <ThemeSwitcher />
+          {/*<ThemeSwitcher />*/}
         </div>
       </div>
     </header>

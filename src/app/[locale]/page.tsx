@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header className="absolute top-0 right-0 left-0" />
-      <HeroSection className="bg-gradient-to-br from-slate-50 to-slate-100" />
-      <SkillsSection className="bg-white" />
-      <ProjectsSection className="bg-slate-50" />
-      <AboutSection className="bg-white" />
-      <ContactSection className="bg-slate-50" />
+      <HeroSection className="bg-gradient-to-br from-secondary to-muted" />
+      <SkillsSection className="bg-background" />
+      <ProjectsSection className="bg-secondary" />
+      <AboutSection className="bg-background" />
+      <ContactSection className="bg-secondary" />
       <Footer />
     </main>
   );

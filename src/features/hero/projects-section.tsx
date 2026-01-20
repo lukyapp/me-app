@@ -64,7 +64,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
 
   return (
     <section
-      className={cn('bg-slate-50 px-4 py-20', className)}
+      className={cn('bg-secondary px-4 py-20', className)}
       id="projects"
       aria-labelledby="projects-heading"
     >
@@ -73,16 +73,16 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
           <h2 id="projects-heading" className="mb-4">
             {t('projects.title')}
           </h2>
-          <p className="mx-auto max-w-2xl text-slate-600">{t('projects.subtitle')}</p>
+          <p className="mx-auto max-w-2xl text-muted-foreground">{t('projects.subtitle')}</p>
         </header>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden border-slate-200 transition-shadow hover:shadow-lg"
+              className="overflow-hidden border-border transition-shadow hover:shadow-lg"
             >
-              <div className="relative h-48 overflow-hidden bg-slate-200">
+              <div className="relative h-48 overflow-hidden bg-muted">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -91,7 +91,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
               </div>
               <CardContent className="p-6">
                 <h3 className="mb-2">{t(project.title)}</h3>
-                <p className="mb-4 text-sm text-slate-600">{t(project.description)}</p>
+                <p className="mb-4 text-sm text-muted-foreground">{t(project.description)}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge key={tagIndex} variant="secondary" className="text-xs">

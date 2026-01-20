@@ -55,7 +55,7 @@ export function ContactForm({ labels }: ContactFormProps) {
           disabled={isPending}
         />
         {state?.errors?.name && (
-          <p className="mt-1 text-sm text-red-500">{state.errors.name.errors[0]}</p>
+          <p className="mt-1 text-sm text-destructive">{state.errors.name.errors[0]}</p>
         )}
       </div>
 
@@ -71,7 +71,7 @@ export function ContactForm({ labels }: ContactFormProps) {
           disabled={isPending}
         />
         {state?.errors?.email && (
-          <p className="mt-1 text-sm text-red-500">{state.errors.email.errors[0]}</p>
+          <p className="mt-1 text-sm text-destructive">{state.errors.email.errors[0]}</p>
         )}
       </div>
 
@@ -86,7 +86,7 @@ export function ContactForm({ labels }: ContactFormProps) {
           disabled={isPending}
         />
         {state?.errors?.message && (
-          <p className="mt-1 text-sm text-red-500">{state.errors.message.errors[0]}</p>
+          <p className="mt-1 text-sm text-destructive">{state.errors.message.errors[0]}</p>
         )}
       </div>
 

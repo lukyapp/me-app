@@ -6,12 +6,12 @@ export async function Footer() {
   const t = await getTranslations();
 
   return (
-    <footer className="bg-slate-900 px-4 py-12 text-white" role="contentinfo">
+    <footer className="bg-footer px-4 py-12 text-footer-foreground" role="contentinfo">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <h3 className="mb-4 text-lg font-semibold">{t('footer.about-section-label')}</h3>
-            <p className="text-sm text-slate-400">{t('footer.about-section-paragraph')}</p>
+            <p className="text-sm text-footer-muted">{t('footer.about-section-paragraph')}</p>
           </div>
 
           <nav aria-label={t('footer.quick-links-section-nav-label')}>
@@ -36,7 +36,7 @@ export async function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 transition-colors hover:text-white"
+                    className="text-footer-muted transition-colors hover:text-footer-foreground"
                     aria-label={t(`hero.social-media-links.${id}-label`)}
                   >
                     <Icon className="h-5 w-5" />
@@ -47,7 +47,7 @@ export async function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center text-sm text-slate-400">
+        <div className="border-t border-slate-700 pt-8 text-center text-sm text-footer-muted">
           <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>

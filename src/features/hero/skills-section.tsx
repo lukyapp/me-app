@@ -47,7 +47,7 @@ export async function SkillsSection({ className }: ComponentProps<'section'>) {
           <h2 id="skills-title" className="mb-4">
             {t('skills.title')}
           </h2>
-          <p className="mx-auto max-w-2xl text-slate-600">{t('skills.subtitle')}</p>
+          <p className="mx-auto max-w-2xl text-muted-foreground">{t('skills.subtitle')}</p>
         </header>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -55,14 +55,14 @@ export async function SkillsSection({ className }: ComponentProps<'section'>) {
             return (
               <Card
                 key={index}
-                className="border-slate-200 transition-colors hover:border-blue-300"
+                className="border-border transition-colors hover:border-primary"
               >
                 <CardContent className="p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-                    <Icon className="h-6 w-6 text-blue-600" />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-tertiary-light">
+                    <Icon className="h-6 w-6 text-tertiary" />
                   </div>
                   <h3 className="mb-2">{t(title)}</h3>
-                  <p className="text-sm text-slate-600">{t(description)}</p>
+                  <p className="text-sm text-muted-foreground">{t(description)}</p>
                 </CardContent>
               </Card>
             );
