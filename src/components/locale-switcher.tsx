@@ -11,6 +11,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { Locale } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 const locales = [
   { value: 'en-US', label: 'English', flag: '🇺🇸' },
@@ -32,12 +33,16 @@ export function LocaleSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {locales.map((locale) => (
-          <Link key={locale.value} href={pathname} locale={locale.value}>
-            <DropdownMenuItem className={locale.value === currentLocale ? 'bg-accent' : ''}>
+          <DropdownMenuItem
+            key={locale.value}
+            asChild
+            className={locale.value === currentLocale ? 'bg-accent' : ''}
+          >
+            <Link href={pathname} locale={locale.value}>
               <span className="mr-2 text-base">{locale.flag}</span>
               <span>{locale.label}</span>
-            </DropdownMenuItem>
-          </Link>
+            </Link>
+          </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
