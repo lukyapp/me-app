@@ -32,13 +32,13 @@ const projects = [
     tags: [
       'E-commerce',
       'Backend',
+      'Java',
       'Legacy Monolith',
       'Microservices',
       'Production Support',
       'JWT',
       'JWKS',
       'OpenID Connect',
-      'Decathlon',
     ],
   },
   {
@@ -68,7 +68,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
       id="projects"
       aria-labelledby="projects-heading"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="max-w-8xl mx-auto">
         <header className="mb-16 text-center">
           <h2 id="projects-heading" className="mb-4">
             {t('projects.title')}
@@ -76,7 +76,7 @@ export async function ProjectsSection({ className }: ComponentProps<'section'>) 
           <p className="text-muted-foreground mx-auto max-w-2xl">{t('projects.subtitle')}</p>
         </header>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <Card
               key={index}
