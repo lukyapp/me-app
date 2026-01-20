@@ -1,5 +1,4 @@
 import { LocaleSwitcher } from '@/components/locale-switcher';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 import { cn } from '@/lib/utils';
 import { getTranslations } from 'next-intl/server';
 import { ComponentProps } from 'react';

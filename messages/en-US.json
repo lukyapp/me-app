@@ -103,5 +103,17 @@
   "about.why_trust_me.serious": "Serious and committed",
   "about.why_trust_me.honest": "Honest and transparent approach",
   "about.why_trust_me.support": "Follow-up and support",
-  "about.outro": "If you are looking for a <strong>motivated, available and committed</strong> developer for your project, I would be delighted to discuss with you."
+  "about.outro": "If you are looking for a <strong>motivated, available and committed</strong> developer for your project, I would be delighted to discuss with you.",
+  "seo.title": "Lucas Landru | Full-Stack Web Developer",
+  "seo.description": "Full-Stack Web Developer specializing in React, Next.js, Node.js, and modern web technologies. I build exceptional digital experiences that bring ideas to life.",
+  "seo.og.title": "Lucas Landru | Full-Stack Web Developer",
+  "seo.og.description": "Full-Stack Web Developer specializing in React, Next.js, Node.js, and modern web technologies. I build exceptional digital experiences that bring ideas to life.",
+  "seo.og.image.alt": "Lucas Landru - Full-Stack Web Developer",
+  "seo.twitter.title": "Lucas Landru | Full-Stack Web Developer",
+  "seo.twitter.description": "Full-Stack Web Developer specializing in React, Next.js, Node.js, and modern web technologies.",
+  "seo.jsonld.jobTitle": "Full-Stack Web Developer",
+  "seo.jsonld.description": "Full-Stack Web Developer specializing in React, Next.js, Node.js, and modern web technologies.",
+  "seo.manifest.name": "Lucas Landru - Full-Stack Web Developer",
+  "seo.manifest.shortName": "Lucas Landru",
+  "seo.manifest.description": "Full-Stack Web Developer specializing in React, Next.js, Node.js, and modern web technologies."
 }

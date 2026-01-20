@@ -4,5 +4,6 @@ declare namespace NodeJS {
     RESEND_API_KEY: string;
     CONTACT_EMAIL: string;
     RESEND_FROM_EMAIL: string;
+    NEXT_PUBLIC_SITE_URL: string;
   }
 }

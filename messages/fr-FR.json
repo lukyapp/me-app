@@ -103,5 +103,17 @@
   "about.why_trust_me.serious": "Sérieux et impliqué",
   "about.why_trust_me.honest": "Approche honnête et transparente",
   "about.why_trust_me.support": "Suivi et accompagnement",
-  "about.outro": "Si vous cherchez un développeur <strong>motivé, disponible et impliqué</strong> dans votre projet, je serais ravi d'échanger avec vous."
+  "about.outro": "Si vous cherchez un développeur <strong>motivé, disponible et impliqué</strong> dans votre projet, je serais ravi d'échanger avec vous.",
+  "seo.title": "Lucas Landru | Développeur Web Full-Stack",
+  "seo.description": "Développeur Web Full-Stack spécialisé en React, Next.js, Node.js et technologies web modernes. Je crée des expériences digitales exceptionnelles qui donnent vie à vos idées.",
+  "seo.og.title": "Lucas Landru | Développeur Web Full-Stack",
+  "seo.og.description": "Développeur Web Full-Stack spécialisé en React, Next.js, Node.js et technologies web modernes. Je crée des expériences digitales exceptionnelles qui donnent vie à vos idées.",
+  "seo.og.image.alt": "Lucas Landru - Développeur Web Full-Stack",
+  "seo.twitter.title": "Lucas Landru | Développeur Web Full-Stack",
+  "seo.twitter.description": "Développeur Web Full-Stack spécialisé en React, Next.js, Node.js et technologies web modernes.",
+  "seo.jsonld.jobTitle": "Développeur Web Full-Stack",
+  "seo.jsonld.description": "Développeur Web Full-Stack spécialisé en React, Next.js, Node.js et technologies web modernes.",
+  "seo.manifest.name": "Lucas Landru - Développeur Web Full-Stack",
+  "seo.manifest.shortName": "Lucas Landru",
+  "seo.manifest.description": "Développeur Web Full-Stack spécialisé en React, Next.js, Node.js et technologies web modernes."
 }

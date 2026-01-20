@@ -38,6 +38,7 @@ const envSchema = z.object({
     .regex(/^re_[A-Za-z0-9_]+$/, "RESEND_API_KEY must start with 're_'"),
   CONTACT_EMAIL: z.email('CONTACT_EMAIL must be a valid email').min(1, 'CONTACT_EMAIL is required'),
   RESEND_FROM_EMAIL: resendFromEmailSchema,
+  NEXT_PUBLIC_SITE_URL: z.string().min(1, 'NEXT_PUBLIC_SITE_URL is required'),
 });
 
 const envValues = {
@@ -45,6 +46,7 @@ const envValues = {
   RESEND_API_KEY: process.env.RESEND_API_KEY,
   CONTACT_EMAIL: process.env.CONTACT_EMAIL,
   RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
 };
 
 export const parsed = envSchema.safeParse(envValues);
