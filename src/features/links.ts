@@ -45,7 +45,7 @@ export const socialMediaLinks = [
   {
     id: 'email',
     enable: true,
-    href: 'mailto:llucas.proo@gmail.com',
+    href: `mailto:${process.env.CONTACT_EMAIL}`,
     icon: Mail,
   },
 ] satisfies { id: string; enable: boolean; href: string; icon: typeof Mail }[];
